@@ -2,5 +2,8 @@
 node_modules/
 jspm_packages/
 
+# BUILT FILES
+dist/
+
 # OTHER
 tags
