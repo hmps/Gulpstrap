@@ -1,0 +1,39 @@
+{
+  "name": "gulpstrap",
+  "version": "0.0.0",
+  "description": "Templates and helpers for Gulp",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "rm -rf dist && npm run-script compile && mocha --compilers js:babel/register",
+    "compile": "babel src --out-dir dist --optional runtime"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmps/Gulpstrap.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Hampus Persson <h@hmps.se> (http://hmps.se/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmps/Gulpstrap/issues"
+  },
+  "homepage": "https://github.com/hmps/Gulpstrap#readme",
+  "devDependencies": {
+    "babel-eslint": "^3.1.23",
+    "chai": "^3.0.0",
+    "eslint": "^0.24.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "babel": "^5.6.14",
+    "babel-runtime": "^5.6.15",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.5",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.1"
+  }
+}
