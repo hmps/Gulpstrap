@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "rm -rf dist && npm run-script compile && mocha --compilers js:babel/register",
-    "compile": "babel src --out-dir dist --optional runtime"
+    "compile": "babel src --out-dir dist --optional runtime",
+    "prepublish": "npm run-script compile"
   },
   "repository": {
     "type": "git",
