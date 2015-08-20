@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../task';
 
 import browserSync from 'browser-sync';
 import args from '../args';
@@ -15,4 +15,4 @@ function serveFactory(opts) {
     });
 }
 
-export default serveFactory;
+export { serveFactory as serve };

@@ -25,4 +25,4 @@ class Git {
 
 let gitInstance = new Git();
 
-export default gitInstance;
+export { gitInstance as git };

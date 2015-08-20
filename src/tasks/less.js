@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../task';
 
 import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
@@ -17,4 +17,4 @@ function lessFactory(opts = {}) {
     return new Task(opts.name || 'less', opts, reqParams, ops);
 }
 
-export default lessFactory;
+export { lessFactory as less };

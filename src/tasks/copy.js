@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../task';
 
 function copyFactory(opts = {}) {
     let reqParams = ['src', 'dest'];

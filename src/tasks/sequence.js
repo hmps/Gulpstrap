@@ -19,4 +19,4 @@ function sequenceFactory(name, tasks) {
     return new Sequence(name, tasks);
 }
 
-export default sequenceFactory;
+export { sequenceFactory as sequence };

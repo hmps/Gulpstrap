@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../task';
 import gulp from 'gulp';
 // watch(path: 'test/src/test.styl', tasks: ['stylus']);
 
@@ -35,4 +35,4 @@ function checkForErrors(opts) {
     }
 }
 
-export default watchFactory;
+export { watchFactory as watch };

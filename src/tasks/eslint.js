@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../task';
 
 import eslint from 'gulp-eslint';
 
@@ -12,4 +12,4 @@ function eslintFactory(opts = {}) {
     return new Task(opts.name || 'eslint', opts, reqParams, ops);
 }
 
-export default eslintFactory;
+export { eslintFactory as eslint };

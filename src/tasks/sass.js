@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../task';
 
 import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
@@ -25,4 +25,4 @@ function sassFactory(opts = {}) {
     return new Task(opts.name || 'sass', opts, reqParams, ops);
 }
 
-export default sassFactory;
+export { sassFactory as sass };

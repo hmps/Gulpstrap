@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../task';
 
 import { Server } from 'karma';
 
@@ -17,4 +17,4 @@ function karmaFactory(opts) {
     });
 }
 
-export default karmaFactory;
+export  { karmaFactory as karma };

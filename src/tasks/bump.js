@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../task';
 
 import bump from 'gulp-bump';
 import args from '../args';
@@ -15,4 +15,4 @@ function bumpFactory(opts = {}) {
     return new Task(opts.name || 'bump', opts, reqParams, ops);
 }
 
-export default bumpFactory;
+export { bumpFactory as bump };

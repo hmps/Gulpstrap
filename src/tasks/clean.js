@@ -1,5 +1,4 @@
-import { checkRequiredParams } from '../helpers';
-import { Task } from './task';
+import { Task } from '../task';
 
 import fs from 'fs';
 import del from 'del';
@@ -28,4 +27,4 @@ function cleanFactory(opts = {}) {
     return new CleanTask(opts);
 }
 
-export default cleanFactory;
+export { cleanFactory as clean };
