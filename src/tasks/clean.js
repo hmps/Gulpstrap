@@ -1,6 +1,7 @@
 import { checkRequiredParams } from '../helpers';
 import { Task } from './task';
 
+import fs from 'fs';
 import del from 'del';
 
 class CleanTask {
@@ -14,7 +15,11 @@ class CleanTask {
         }
 
         return Task.addGulpTask(this.name, (cb) => {
-            return del(opts.paths, cb);
+            if ( fs.existsSync(opts.paths) ) {
+                return del(opts.paths, cb);
+            }
+
+            cb();
         });
     }
 }
