@@ -1,4 +1,4 @@
-import { pipelineFactory } from '../helpers';
+import { pipelineFactory } from './helpers';
 import gulp from 'gulp';
 
 class Task {
