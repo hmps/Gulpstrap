@@ -10,7 +10,7 @@ function serveFactory(opts) {
 
     opts.browsersync.open = args.openBrowser;
 
-    return Task.addGulpTask(opts.nsme || 'serve', done => {
+    return Task.addGulpTask(opts.name || 'serve', done => {
         browserSync(opts.browsersync, done);
     });
 }
