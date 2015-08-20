@@ -22,16 +22,6 @@ var pipelineFactory = {
     }
 }
 
-
-function checkRequiredParams(name, opts, params) {
-    params.forEach((item) => {
-        if (!opts.hasOwnProperty(item)) {
-            throw new Error(`${item} is a required param for ${name} task`);
-        }
-    });
-}
-
 export {
-    pipelineFactory,
-    checkRequiredParams
+    pipelineFactory
 };
