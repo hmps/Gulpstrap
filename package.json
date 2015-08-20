@@ -1,5 +1,5 @@
 {
-  "name": "Strawpedo",
+  "name": "strawpedo",
   "version": "0.1.0",
   "description": "A set of standardized tasks to help any developer that uses Gulp for their build system",
   "main": "dist/index.js",
