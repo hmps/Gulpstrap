@@ -1,0 +1,50 @@
+{
+  "name": "Strawpedo",
+  "version": "0.1.0",
+  "description": "A set of standardized tasks to help any developer that uses Gulp for their build system",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "rm -rf dist && npm run-script compile && mocha --compilers js:babel/register",
+    "compile": "babel src --out-dir dist --optional runtime",
+    "prepublish": "npm run-script compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmps/Strawpedo.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Hampus Persson <h@hmps.se> (http://hmps.se/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmps/Strawpedo/issues"
+  },
+  "homepage": "https://github.com/hmps/Strawpedo#readme",
+  "devDependencies": {
+    "babel-eslint": "^3.1.23",
+    "chai": "^3.0.0",
+    "eslint": "^0.24.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "babel": "^5.6.14",
+    "babel-eslint": "^4.0.10",
+    "babel-runtime": "^5.6.15",
+    "browser-sync": "^2.8.2",
+    "del": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-bump": "^0.3.1",
+    "gulp-eslint": "^1.0.0",
+    "gulp-git": "^1.2.4",
+    "gulp-less": "^3.0.3",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.5",
+    "karma": "^0.13.9",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.1",
+    "yargs": "^3.20.0"
+  }
+}
