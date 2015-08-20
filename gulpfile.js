@@ -1,26 +1,17 @@
 
-/* Include all the types of tasks that you need in your project */
-/* These are just a few examples */
-var eslint = require('./dist/tasks/eslint');
-var stylus = require('./dist/tasks/stylus');
-var clean = require('./dist/tasks/clean');
-
-var sequence = require('./dist/tasks/sequence');
-var gulpWatch = require('./dist/tasks/watch');
-
-
+/** Include strawpedo to call its methods */
+var strawpedo = require('./dist/index');
 
 /**
  * To set up a task, simply call the method and include an object with options.
  * Read instructions for each task to find required and optional options.
  */
-eslint({name: 'eslint', src: 'test/src/*.js' });
-stylus({
+strawpedo.eslint({name: 'eslint', src: 'test/src/*.js' });
+strawpedo.stylus({
     name: 'stylus',
     src: 'test/src/*.styl',
     dest: 'test/dist/',
     stylus: {
-        use: nib(),
         compress: false
     }
 });
@@ -32,7 +23,7 @@ stylus({
  * task will be given the same name as the task constructor. In the example below,
  * the name will be clean.
  */
-clean({paths: ['test/dist']});
+strawpedo.clean({paths: ['test/dist']});
 
 
 
@@ -40,7 +31,7 @@ clean({paths: ['test/dist']});
  * Gulp watch is a special task that sets up a task with watchers. Each entry in
  * the watchers object will be added as a gulp.watch.
  */
-gulpWatch({ name: 'watch', watchers: [
+strawpedo.watch({ name: 'watch', watchers: [
     { path: 'test/src/test.styl', tasks: ['stylus'] },
     { path: 'test/src/test.js', tasks: ['eslint'] }
 ]});
@@ -61,4 +52,4 @@ gulpWatch({ name: 'watch', watchers: [
  * Task3 and Task4 will run in parallel. When they have both completed
  * Task 5 will run
  */
-sequence('default', [[ 'stylus', 'eslint' ], 'watch']);
+strawpedo.sequence('default', [[ 'stylus', 'eslint' ], 'watch']);
