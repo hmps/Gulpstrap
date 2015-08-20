@@ -1,23 +1,26 @@
 import { checkRequiredParams } from '../helpers';
-import gulp from 'gulp';
+import { Task } from './task';
+
 import del from 'del';
 
-class Clean {
-    constructor() {
+class CleanTask {
+    constructor(opts = {}) {
         this.name = 'clean';
-    }
 
-    setupTask(opts = {}) {
-        checkRequiredParams(this.name, opts, ['paths']);
+        Task.checkRequiredParams(this.name, opts, ['paths']);
 
         if ( !Array.isArray(opts.paths) ) {
             opts.paths = [ opts.paths ];
         }
 
-        return gulp.task(opts.name || this.name, (cb) => {
+        return Task.addGulpTask(this.name, (cb) => {
             return del(opts.paths, cb);
         });
     }
 }
 
-export default new Clean();
+function cleanFactory(opts = {}) {
+    return new CleanTask(opts);
+}
+
+export default cleanFactory;

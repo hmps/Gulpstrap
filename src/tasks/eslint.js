@@ -1,25 +1,15 @@
-import { pipelineFactory, checkRequiredParams } from '../helpers';
-import gulp from 'gulp';
+import { Task } from './task';
+
 import eslint from 'gulp-eslint';
 
-class ESLint {
-    constructor() {
-        this.name = 'eslint';
-    }
+function eslintFactory(opts = {}) {
+    let ops = [
+        { fn: eslint, opts: opts.eslint },
+        { fn: eslint.format }
+    ];
+    let reqParams = ['src'];
 
-    setupTask(opts = {}) {
-        checkRequiredParams(this.name, opts, ['src']);
-
-        return gulp.task(opts.name || this.name, () => {
-            let pipeline = pipelineFactory.create(opts.src);
-
-            pipeline
-                .addPipe({ fn: eslint, opts: opts.eslint })
-                .addPipe({ fn: eslint.format });
-
-            return pipeline.pipeline;
-        });
-    }
+    return new Task(opts.name || 'eslint', opts, reqParams, ops);
 }
 
-export default new ESLint();
+export default eslintFactory;

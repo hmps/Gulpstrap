@@ -1,31 +1,20 @@
+import { Task } from './task';
+
 import autoprefixer from 'gulp-autoprefixer';
-import { pipelineFactory, checkRequiredParams } from '../helpers';
-import gulp from 'gulp';
 import sourcemaps from 'gulp-sourcemaps';
 import stylus from 'gulp-stylus';
 
-class Stylus {
-    constructor() {
-        this.name = 'stylus';
-    }
+function stylusFactory(opts = {}) {
+    let ops = [
+        { if: opts.sourcemaps, fn: sourcemaps.init },
+        { fn: stylus, opts: opts.stylus },
+        { if: opts.autoprefixer, fn: autoprefixer },
+        { if: opts.sourcemaps, fn: sourcemaps.write, opts: '.' },
+        { gulpDest: opts.dest }
+    ];
+    let reqParams = ['src', 'dest'];
 
-    setupTask(opts = {}) {
-        checkRequiredParams(this.name, opts, ['src', 'dest']);
-
-        return gulp.task(opts.name || this.name, () => {
-            let pipeline = pipelineFactory.create(opts.src);
-
-            pipeline
-                .addPipe({ if: opts.sourcemaps, fn: sourcemaps.init })
-                .addPipe({ fn: stylus, opts: opts.stylus })
-                .addPipe({ if: opts.autoprefixer, fn: autoprefixer })
-                .addPipe({ if: opts.sourcemaps, fn: sourcemaps.write, opts: '.' })
-                .addPipe({ fn: gulp.dest, opts: opts.dest });
-
-            return pipeline.pipeline;
-
-        });
-    }
+    return new Task(opts.name || 'stylus', opts, reqParams, ops);
 }
 
-export default new Stylus();
+export default stylusFactory;
