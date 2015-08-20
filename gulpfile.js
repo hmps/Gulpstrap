@@ -9,6 +9,7 @@ var clean = require('./dist/tasks/clean');
 var copy = require('./dist/tasks/copy');
 var bump = require('./dist/tasks/bump');
 var serve = require('./dist/tasks/serve');
+var karma = require('./dist/tasks/karma');
 
 var sequence = require('./dist/tasks/sequence');
 var gulpWatch = require('./dist/tasks/watch');
@@ -20,6 +21,7 @@ eslint({name: 'eslint', src: 'test/src/*.js' });
 clean({name: 'clean', paths: ['test/dist']});
 copy({name: 'copy', src: 'test/src/**/*.js', dest: 'test/dist'});
 bump({ name: 'bump' });
+karma({ name: 'karma', config: 'test/karma.conf.js' });
 serve({
     port: 9000,
     startPath: 'test/src',
