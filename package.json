@@ -1,7 +1,7 @@
 {
   "name": "Strawpedo",
-  "version": "0.0.0",
-  "description": "Templates and helpers for Gulp",
+  "version": "0.1.0",
+  "description": "A set of standardized tasks to help any developer that uses Gulp for their build system",
   "main": "dist/index.js",
   "scripts": {
     "test": "rm -rf dist && npm run-script compile && mocha --compilers js:babel/register",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hmps/Gulpstrap.git"
+    "url": "git+https://github.com/hmps/Strawpedo.git"
   },
   "keywords": [
     "gulp"
@@ -18,9 +18,9 @@
   "author": "Hampus Persson <h@hmps.se> (http://hmps.se/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hmps/Gulpstrap/issues"
+    "url": "https://github.com/hmps/Strawpedo/issues"
   },
-  "homepage": "https://github.com/hmps/Gulpstrap#readme",
+  "homepage": "https://github.com/hmps/Strawpedo#readme",
   "devDependencies": {
     "babel-eslint": "^3.1.23",
     "chai": "^3.0.0",
