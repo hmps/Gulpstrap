@@ -10,4 +10,4 @@ function copyFactory(opts = {}) {
     return new Task(opts.name || 'copy', opts, reqParams, ops);
 }
 
-export default copyFactory;
+export { copyFactory as copy };
