@@ -14,11 +14,7 @@ class CleanTask {
         }
 
         return Task.addGulpTask(this.name, (cb) => {
-            if ( fs.existsSync(opts.paths) ) {
-                return del(opts.paths, cb);
-            }
-
-            cb();
+            return del(opts.paths, cb);
         });
     }
 }
