@@ -1,6 +1,5 @@
 import { Task } from '../task';
 
-import fs from 'fs';
 import del from 'del';
 
 class CleanTask {
