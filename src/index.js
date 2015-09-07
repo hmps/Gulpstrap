@@ -11,3 +11,7 @@ export { sequence } from './tasks/sequence';
 export { serve } from './tasks/serve';
 export { stylus } from './tasks/stylus';
 export { watch } from './tasks/watch';
+
+import gulp from 'gulp';
+
+export { gulp };
