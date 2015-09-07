@@ -9,12 +9,12 @@ class ExecTask {
         Task.checkRequiredParams(this.name, opts, ['cmd']);
 
         return Task.addGulpTask(this.name, (cb) => {
-            if ( opts.message ) { console.log(opts.message); }
+            if ( opts.message ) console.log(opts.message);
 
             exec(opts.cmd, (err, stdout) => {
-                if ( opts.stdout ) { console.log(stdout); }
+                if ( opts.stdout ) console.log(stdout);
 
-                if ( err ) { console.log(err); }
+                if ( err ) console.log(err);
 
                 cb(err);
             });
