@@ -2,6 +2,7 @@ export { bump } from './tasks/bump';
 export { clean } from './tasks/clean';
 export { copy } from './tasks/copy';
 export { eslint } from './tasks/eslint';
+export { exec } from './tasks/exec';
 export { git } from './tasks/git';
 export { karma } from './tasks/karma';
 export { less } from './tasks/less';
