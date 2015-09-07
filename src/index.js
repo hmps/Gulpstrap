@@ -4,7 +4,7 @@ export { copy } from './tasks/copy';
 export { eslint } from './tasks/eslint';
 export { exec } from './tasks/exec';
 export { git } from './tasks/git';
-export { karma } from './tasks/karma';
+// export { karma } from './tasks/karma';
 export { less } from './tasks/less';
 // export { sass } from './tasks/sass'; // sass is broken
 export { sequence } from './tasks/sequence';
